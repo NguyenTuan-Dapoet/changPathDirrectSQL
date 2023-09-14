@@ -1,0 +1,2 @@
+# changPathDirrectSQL
+ change dir path
