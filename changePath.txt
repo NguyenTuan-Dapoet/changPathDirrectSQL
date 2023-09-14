@@ -1,0 +1,19 @@
+1. Mở my.ini bằng Notepad (quyền admin)
+Copy giá trị <path cũ> ở:
+(có thể sửa bằng device -> mySQL -> turn of -> on ->.... -> off)
+	datadir=<path_cũ>
+Rồi sửa
+	datadir=<path_mới>
+Sau đó mở File Explorer, vào <path_cũ> copy toàn bộ file data trong đó vào <path_mới>.
+
+2. Mở cmd (admin) chạy các lệnh:
+	net stop mysql80
+	net start mysql80
+Rồi gõ thử
+	mysql -u root -p
+Nếu không mở được mysql, chuyển sang bước 3.
+
+3. Bấm Start, gõ chữ "Edit the system environment variables", bấm nút "Environment Variables...". Ở hộp User variables for Admin (hoặc hộp phía trên trong số hai hộp) double-click vào variable Path. Chọn New và nhập path C:\Program Files\MySQL\MySQL Server 8.0\bin vào. Ấn OK để đóng tất cả hộp thoại.
+Sau đó mở lại cmd mới, gõ lại
+	mysql -u root -p
+chạy được là ok. 
